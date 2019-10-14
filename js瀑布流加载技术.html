@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流加载</title>
+</head>
+<style type='text/css'>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #wrap {
+        width: 837px;
+        margin: 50px auto;
+        box-shadow: 0 0 5px #000;
+    }
+
+    #wrap ul {
+        overflow: hidden;
+    }
+
+    #wrap ul li {
+        list-style: none;
+        width: 265px;
+        float: left;
+    }
+
+    #wrap ul li .detail {
+        font-family: 'Microsoft yahei';
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        display: none;
+    }
+
+    #wrap ul li .detail img {
+        display: block;
+    }
+
+    #wrap ul li a.dec {
+        line-height: 25px;
+        padding: 8px 15px;
+        background: #fff;
+        display: block;
+        color: #000;
+        text-decoration: none;
+    }
+
+    #wrap ul li .time {
+        height: 42px;
+        background: #f1f1f1;
+        border-top: 1px solid #ddd;
+    }
+
+    #wrap ul li .time p {
+        float: left;
+        line-height: 42px;
+        color: #666;
+        text-indent: 10px;
+        font-size: 12px;
+    }
+
+    #wrap ul li .time a {
+        float: right;
+        width: 80px;
+        line-height: 42px;
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        text-decoration: none;
+        border-left: 1px solid #ddd;
+    }
+
+    #wrap ul li a:hover {
+        color: #b70032;
+    }
+</style>
+<body>
+     
+       <div id="wrap">
+           <ul>
+               <li></li>
+               <li style="margin-left: 20px"></li>
+               <li style="float: right"></li>
+           </ul>
+       </div>
+
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/data.js"></script>
+<script>
+    $(function () {
+        var $li = $('#wrap ul li');
+        var liLength = $li.length;
+        var $wrap = $('#wrap');
+        var index =-1;
+        show(10);
+        $(window).scroll(function () {
+        //    当前盒子的高度 + 当前盒子的top值 - 滚动距离
+            var bw = $wrap.offset().top + $wrap.height() - $(document).scrollTop();
+        //    当高度小于浏览器窗口高度时候，说明超过了
+            if(bw < $(window).height()){
+                num = index + 5;
+                show(num)
+            }
+        });
+
+
+        function show(num) {
+            index ++;
+            var oDiv = createDiv(index);
+            var i = getShort();
+            $li.eq(i).append($(oDiv));
+            $(oDiv).fadeIn(1000);
+            var oImg = oDiv.getElementsByTagName('img')[0];
+                if (index < num ){
+                    show(num);
+                }
+
+        };
+
+
+    //    得到三个li最短的序列号
+
+        function getShort() {
+        //    假设最短的是第一个：a => 序列号 ; fH => 第一个高度
+            var  a = 0;
+            var  fH = $li.eq(0).height();
+        //    循环所有的li
+            for(var i = 1; i>liLength; i++){
+                var nH = $li.eq(i).height();
+            //   如果说li的高度小于fH
+            if(nH < fH){
+                a = i;
+                fH = nH;
+            }
+            }
+            return a;
+
+        }
+
+        function createDiv(i) {
+            var oDiv = document.createElement('div');
+            oDiv.className = 'detail';
+            var oImg = new Image();
+            oImg.src = imgData[i].src;
+            oImg.width = '263';
+            var  oA = document.createElement('a');
+            oA.href = '';
+            oA.className = 'dec';
+            oA.innerHTML = imgData[i].dec;
+            var  oDiv1 =document.createElement('div');
+            oDiv1.className = 'time';
+            var oP = document.createElement('p');
+            oP.innerHTML = imgData[i].time;
+            var oA1 = document.createElement('a');
+            oA1.href = '';
+            oA1.innerHTML = '确定全文';
+            oDiv1.appendChild(oP);
+            oDiv1.appendChild(oA1);
+            oDiv.appendChild(oImg);
+            oDiv.appendChild(oA);
+            oDiv.appendChild(oDiv1);
+            return oDiv;
+        }
+
+
+    })
+</script>
+</html>
