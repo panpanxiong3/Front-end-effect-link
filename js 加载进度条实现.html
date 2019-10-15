@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js加载进度条实现</title>
+</head>
+<style>
+    #progress {
+        position: fixed;
+        background: #000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+    }
+
+    #progress p {
+        width: 0px;
+        height: 30px;
+        border-radius: 3px;
+        background: #ffcccc;
+        color: #330000;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 30px;
+        text-align: center;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -250px;
+    }
+
+    body {
+        overflow: hidden;
+    }
+</style>
+<body>
+     <div id="progress">
+           <p>0%</p>
+     </div>
+</body>
+
+<script>
+    var  oP = document.getElementById('progress').getElementsByTagName('p')[0];
+    var  oCss = document.getElementById('css');
+
+    function move(num) {
+        clearInterval(oP.timer);
+        oP.timer = setInterval(function () {
+            if(parseInt(oP.innerHTML) < num){    //判断加载进度
+                var s = parseInt(oP.innerHTML) + 1;
+                var w = 500 * s / 100;
+                oP.innerHTML = s + '%';   //渲染进度
+                oP.style.width = w + 'px';
+            }else {
+                clearInterval(oP.timer);
+                if(num == 100){
+                    oP.parentNode.parentNode.removeChild(oP.parentNode); // 加载完成取消进度
+                    oCss.parentNode.removeChild(oCss);
+                    var oScript = document.getElementsByClassName('pMove');
+                    var length = oScript.length;
+
+                    for(var i = length - 1 ; i>= 0; i--){
+                        oScript[i].parentNode.removeChild(oScript[i]);
+                    }
+                }
+            }
+        },10)
+    }
+    move(60); //加载百分之60的进度
+</script>
+
+</html>
