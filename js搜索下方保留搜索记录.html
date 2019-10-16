@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端搜索框下方保留搜索记录</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin-left: 300px;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li,div{
+            width: 250px;
+            padding: 10px 0;
+            margin-left: 10px;
+            border-bottom: 1px dashed #ccc;
+            height: 20px;
+        }
+        a{
+            float: right;
+        }
+        input{
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<input placeholder="输入搜索关键字" type="search"/>
+<input type="button" value="搜索"/>
+<div><a href="javascript:;">清空搜索记录</a></div>
+<ul>
+    
+</ul>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+      $(function () {
+      //    1.使用json的数据保留搜索记录
+      //    2.预设值 key值
+      //    3.格式化json值
+          
+      //    1.默认根据历史记录渲染历史列表
+          var historyListJson = localStorage.getItem('historyList') || '[]';
+          var historyListArr = JSON.parse(historyListJson);
+          
+      //    获取到数组格式的数据
+          var render = function () {
+          //    forEach 遍历函数 只能数组调用 回到函数（所有对应的值，索引）;
+              var html = '';
+              historyListArr.forEach(function (item,i) {
+                  html += '<li><span>' + item + '</span><a data-index="' + i +'" href="javacript:;">删除</a></li>'
+              });
+              html = html || '<li>没有搜索记录</li>'
+              $('ul').html(html);
+          }
+          render();
+          
+      //  2.点击搜索记录的时候更新历史记录渲染历史列表
+          $('[type="button"]').on('click',function () {
+              var  key = $.trim($('[type = "search"]').val());
+              if(!key){
+                  alert('请输入关键字');
+                  return false;
+              }
+          //    添加一条历史记录
+              historyListArr.push(key);
+          //    保存
+              localStorage.setItem('historyList',JSON.stringify(historyListArr));
+          //    渲染一次
+              render();
+              $('[type = "search"]').val('');
+          })
+          
+      //    3.点击删除的时候删除对应的历史记录渲染记录
+          $('ul').on('click','a',function () {
+              var index = $(this).data('index');
+          //    删除
+              historyListArr.splice(index,1);
+          //    保存
+              localStorage.setItem('historyList',JSON.stringify(historyListArr));
+          //    渲染一次
+              render();
+          });
+
+      //    4.点击删除的时候清空历史记录渲染列表
+      //    清空
+          $('div a').on('click',function () {
+              historyListArr = [];
+              //    慎用 清空网上所有的本地存储
+              // localStorage.clear();
+              // localStorage.removeItem('historyList');
+              localStorage.setItem('historyList','');
+              render();
+          });
+
+      })
+</script>
+</html>
