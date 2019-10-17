@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js原生实现拖动</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 35px;
+            margin: 0 auto;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: green;
+        }
+
+        .btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            width: 50px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background-color: #333;
+        }
+
+        .text {
+            line-height: 35px;
+            text-align: center;
+            color: red;
+            position: absolute;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="bg"></div>
+    <div class="text">拖动验证</div>
+    <div class="btn"></div>
+</div>
+</body>
+
+<script type="text/javascript">
+    <!--  原生方法实现滑动拖动模块  -->
+    function init() {
+        var btn = document.querySelector('.btn');
+        var bg = document.querySelector('.bg');
+        var text = document.querySelector('.text');
+        var width = document.querySelector('#box').offsetWidth;
+        var maxLeft = document.querySelector('#box').offsetWidth - btn.offsetWidth;
+        var startX = 0;
+        var isDown = false;
+
+        function mousedown(e) {
+            startX = e.clientX;
+            isDown = true;
+        }
+
+        function mousemove(e) {
+            if(!isDown) return false;
+            var left = e.clientX -startX;
+            if(left > 0){
+                btn.style.left = left + 'px';
+                bg.style.width = left + 'px';
+                if(left >= maxLeft){
+                    text.innerText = '验证通过';
+                    text.style.color = '#fff';
+                    left = maxLeft;
+                    btn.style.left = left + 'px';
+                    bg.style.width = left + 'px';
+                    remove();
+                }
+            }
+        }
+
+        function mouseup(e) {
+            var clientX = e.clientX - startX;
+            if(clientX < maxLeft){
+                isDown = false;
+                btn.style.left = 0 + 'px';
+                bg.style.width = 0 + 'px';
+            }else {
+                remove();
+            }
+        }
+
+        function remove() {
+            btn.removeEventListener('mousedown',mousedown,null);
+            document.removeEventListener('mousemove',mousemove,null);
+            document.removeEventListener('mouseup',mouseup,null);
+        }
+
+        btn.addEventListener('mousedown',mousedown,null);
+        document.addEventListener('mousemove',mousemove,null);
+        document.addEventListener('mouseup',mouseup,null);
+    }
+
+    document.addEventListener('readystatechange',init,null);
+</script>
+</html>

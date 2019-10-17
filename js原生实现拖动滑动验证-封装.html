@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 原生实现拖动滑动验证</title>
+</head>
+<style>
+    #box {
+        width: 200px;
+        height: 35px;
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+    }
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: green;
+    }
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        background-color: #333;
+    }
+
+    .text {
+        line-height: 35px;
+        text-align: center;
+        color: red;
+        position: absolute;
+        width: 100%;
+    }
+</style>
+<body>
+<div id="box">
+    <div class="bg"></div>
+    <div class="text noselect">拖动验证</div>
+    <div class="btn"></div>
+</div>
+</body>
+
+<script type="text/javascript">
+    function Drag(conf) {
+        this.btn = this.getDom(conf.btn);
+        this.bg = this.getDom(conf.bg);
+        this.text=this.getDom(conf.text);
+        this.box = this.getDom(conf.box);
+        this.width = this.box.offsetWidth;
+        this.maxLeft = this.width - this.btn.offsetWidth;
+        this.startX = 0;
+        this.isDown = false;
+        this.success = typeof conf.success == "function"?conf.success : null;
+        
+        this.mousedown = this.mousedown.bind(this);
+        this.mousemove = this.mousemove.bind(this);
+        this.mouseup = this.mouseup.bind(this);
+        this.remove = this.remove.bind(this);
+        
+        this.btn.addEventListener('mousedown',this.mousedown,null);
+        document.addEventListener('mousemove',this.mousemove,null);
+        document.addEventListener('mouseup',this.mouseup,null);
+    }
+    
+    Drag.prototype = {
+        getDom:document.querySelector.bind(document),
+        getDomAll:document.querySelectorAll.bind(document),
+        mousedown:function (e) {
+            this.startX = e.clientX;
+            this.isDown = true;
+        },
+        mousemove:function (e) {
+            if(!this.isDown) return false;
+            var left = e.clientX - this.startX;
+            if(left > 0 ){
+                this.btn.style.left = left + 'px';
+                this.bg.style.width = left + 'px';
+                if(left > this.maxLeft){
+                    this.text.innerText = '验证通过';
+                    this.text.style.color = '#fff';
+                    left = this.maxLeft;
+                    this.btn.style.left = left + 'px';
+                    this.bg.style.width = left + 'px';
+                    this.remove();
+                }
+            }
+        },
+        remove:function () {
+            this.isDown = false;
+            this.btn.removeEventListener('mousedown',this.mousedown,null);
+            document.removeEventListener('mousemove',this.mousemove,null);
+            document.removeEventListener('mouseup',this.mouseup,null);
+            if(this.success != null){
+                this.success();
+            }
+        },
+        mouseup:function (e) {
+            var clintX  = e.clientX - this.startX;
+            if(clintX < this.maxLeft){
+                this.isDown = false;
+                this.btn.style.left = 0 + 'px';
+                this.bg.style.width = 0 + 'px';
+            }else {
+                // this.remove().bind(this);
+            }
+        }
+    };
+
+    function init() {
+        var drag = new Drag({
+            box:'#box',
+            btn:'.btn',
+            bg:'.bg',
+            text:'.text',
+            success:function () {
+                console.log('验证成功');
+            }
+        })
+    }
+
+    document.addEventListener('readystatechange',init,null);
+</script>
+</html>
