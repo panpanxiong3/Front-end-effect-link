@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5 拖拽frag 拖放drop 事件</title>
+    <style>
+        h2 {
+            font-size: 20px;
+            color: #0d88c1;
+        }
+
+        div#left,
+        div#right {
+            width: 120px;
+            float: left;
+            margin: 10px 100px 10px 0px;
+            height: 240px;
+            background-color: #dddddd;
+            overflow-y: auto;
+        }
+
+        div label {
+            font-size: 22px;
+            font-weight: bold;
+            width: 100%;
+            display: inline-block;
+            padding: 4px 0;
+            text-align: center;
+            margin: 0px 0 2px 0;
+            color: #fff;
+            background-color: #0d88c1;
+        }
+
+        .over {
+            border: 1px dashed red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h2>拖放(drag 和 drop)</h2>
+<!--    左边元素框    -->
+<div id="left">
+    <label draggable="true">index1</label>
+    <label draggable="true">index2</label>
+    <label draggable="true">index3</label>
+    <label draggable="true">index4</label>
+    <label draggable="true">index5</label>
+    <label draggable="true">index6</label>
+    <label draggable="true">index7</label>
+</div>
+<!--     右边元素框      -->
+<div id="right"></div>
+
+
+</body>
+<script>
+
+    var moveItem = document.getElementsByTagName('label');
+
+    for (var i = 0; i < moveItem.length; i++) {
+        //动态设置label的元素id
+        moveItem[i].setAttribute('id', 'label' + parseInt(i + 1));
+        moveItem[i].ondragstart = function (ev) {
+            //dataTransfer.setData() 方法设置被拖数据的数据类型和值
+            ev.dataTransfer.setData('id', this.id)
+        }
+    }
+    //右边
+    document.getElementById('right').ondragover = function (ev) {
+        ev.preventDefault();
+    };
+
+    document.getElementById('right').ondragenter = function (ev) {
+        ev.target.classList.add('over');
+    };
+
+    document.getElementById('right').ondragleave = function (ev) {
+        ev.target.classList.remove('over');
+    };
+    document.getElementById('right').ondrop = function (ev) {
+        ev.preventDefault();
+        ev.target.classList.remove('over');
+        var id = ev.dataTransfer.getData('id');
+        var elem = document.getElementById(id); //当前拖动的元素
+        var toElem = ev.toElement.id; // 放置位置
+        if (toElem == 'right') {
+            //    如果我container,元素放置在末尾
+            this.appendChild(elem);
+        } else {
+            this.insertBefore(elem, document.getElementById(toElem));
+        }
+
+        //  左边
+        document.getElementById('left').ondragover = function (ev) {
+            ev.preventDefault();
+        };
+
+        document.getElementById('left').ondragenter = function (ev) {
+            ev.target.classList.add('over');
+        };
+
+        document.getElementById('left').ondragleave = function (ev) {
+            ev.target.classList.remove('over');
+        };
+        document.getElementById('left').ondrop = function (ev) {
+            ev.preventDefault();
+            ev.target.classList.remove('over');
+            var id = ev.dataTransfer.getData('id');
+            var elem = document.getElementById(id); //当前拖动的元素
+            var toElem = ev.toElement.id; // 放置位置
+            if (toElem == 'left') {
+                //    如果我container,元素放置在末尾
+                this.appendChild(elem);
+            } else {
+                this.insertBefore(elem, document.getElementById(toElem));
+            }
+        }
+    }
+</script>
+</html>

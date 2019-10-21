@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a82d154-8da5-40f3-bf18-0c8dabae2b09" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js-拖拽drag-拖放drop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,21 +17,12 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-841">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html">
+        <entry file="file://$PROJECT_DIR$/js-拖拽drag-拖放drop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="98" column="54" lean-forward="true" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+            <state relative-caret-position="1280">
+              <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -56,11 +46,13 @@
         <option value="$PROJECT_DIR$/原生js实现拖动滑块验证--未封装.html" />
         <option value="$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html" />
         <option value="$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html" />
+        <option value="$PROJECT_DIR$/js-拖拽drag-拖放drop.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1893" />
+    <option name="x" value="1908" />
+    <option name="y" value="41" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -114,18 +106,21 @@
       <option name="presentableId" value="Default" />
       <updated>1571209730770</updated>
       <workItem from="1571209732327" duration="2678000" />
-      <workItem from="1571285034298" duration="9554000" />
+      <workItem from="1571285034298" duration="9766000" />
+      <workItem from="1571303587819" duration="599000" />
+      <workItem from="1571359584285" duration="750000" />
+      <workItem from="1571622397887" duration="4933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12232000" />
+    <option name="totallyTimeSpent" value="18726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="-1" width="1922" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25239617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -166,15 +161,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-841">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="483">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="98" column="54" lean-forward="true" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+        <state relative-caret-position="860">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-拖拽drag-拖放drop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1280">
+          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
         </state>
       </provider>
     </entry>
