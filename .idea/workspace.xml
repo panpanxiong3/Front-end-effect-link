@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a82d154-8da5-40f3-bf18-0c8dabae2b09" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/js-拖拽drag-拖放drop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/canvas/Canvas制作粒子效果.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js 加载进度条实现.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js-拖拽drag-拖放drop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js搜索下方保留搜索记录.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js瀑布流加载技术.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +25,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js-拖拽drag-拖放drop.html">
+        <entry file="file://$PROJECT_DIR$/canvas/Canvas制作粒子效果.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1280">
-              <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+            <state relative-caret-position="111">
+              <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -47,6 +53,7 @@
         <option value="$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html" />
         <option value="$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html" />
         <option value="$PROJECT_DIR$/js-拖拽drag-拖放drop.html" />
+        <option value="$PROJECT_DIR$/canvas/Canvas制作粒子效果.html" />
       </list>
     </option>
   </component>
@@ -61,7 +68,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -69,10 +75,16 @@
               <item name="前端效果练习" type="b2602c69:ProjectViewProjectNode" />
               <item name="前端效果练习" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="前端效果练习" type="b2602c69:ProjectViewProjectNode" />
+              <item name="前端效果练习" type="462c0819:PsiDirectoryNode" />
+              <item name="canvas" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -109,18 +121,19 @@
       <workItem from="1571285034298" duration="9766000" />
       <workItem from="1571303587819" duration="599000" />
       <workItem from="1571359584285" duration="750000" />
-      <workItem from="1571622397887" duration="4933000" />
+      <workItem from="1571622397887" duration="5683000" />
+      <workItem from="1571712672295" duration="2540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18726000" />
+    <option name="totallyTimeSpent" value="22016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="-1" width="1922" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -166,6 +179,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js-拖拽drag-拖放drop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="111" column="31" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="860">
@@ -173,10 +193,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js-拖拽drag-拖放drop.html">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+        <state relative-caret-position="308">
+          <caret line="628" column="13" selection-start-line="628" selection-start-column="13" selection-end-line="628" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas/Canvas制作粒子效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
         </state>
       </provider>
     </entry>

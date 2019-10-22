@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas制作粒子效果</title>
+    <style type="text/css">
+    * {
+        margin: 0;padding: 0;
+    }
+    html,body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    canvas {
+        background: #000;
+    }
+    </style>
+</head>
+<body>
+       <canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+    var canvas = document.getElementById('canvas'),
+        c = canvas.getContext('2d'),
+        oW,
+        oH,
+        count,   //粒子的个数
+        speed=5, //速度
+        dotteds = [];
+//    获取设置宽高
+    function getAndSet() {
+    //    获取
+          oW = window.innerWidth || window.body.clientWidth;
+          oH = window.innerHeight || window.body.clientHeight;
+    //    设置
+          canvas.width = oW;
+          canvas.height = oH;
+
+    //      粒子的个数
+          count = Math.floor(oW * oH / 3000);
+    }
+
+    getAndSet(); //调用函数
+
+    //    窗口改变大小
+    window.onresize = function () {
+        getAndSet();
+    }
+
+    //生成粒子
+    for (var i = 0; i<count; i++){
+        dotteds.push(new Dotted(i * Math.floor(Math.random() * 361)));
+    }
+    //创建单个例子对象
+    function Dotted(hue) {
+    //    单个例子的起始坐标
+        this.x = Math.random() * oW;
+        this.y = Math.random() * oH;
+        this.r = Math.random() * 3 + 1;
+
+
+    //    单个例子的速度
+        this.vx = (Math.random() - 0.5) * speed || 1;
+        this.vy = (Math.random() - 0.5) * speed || 1;
+
+    //    颜色
+        this.hue = hue;
+    }
+
+    Dotted.prototype.update = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if(this.x < 0 || this.x > oW){
+            this.vx *= -1;
+            this.r = Math.random() * 3 +1;
+            this.hue = Math.floor(Math.random() * 361);
+        }
+        if(this.y < 0 || this.y >oH){
+            this.vy *= -1;
+            this.r = Math.random() * 3 + 1;
+            this.hue = Math.floor(Math.random() * 361);
+        }
+    }
+
+    function move() {
+        window.requestAnimationFrame(move);
+
+        c.clearRect(0,0,oW,oH);
+
+        for (var i = 1; i <dotteds.length; i ++ ){
+            var d = dotteds[i];
+            d.update();
+            c.beginPath();
+            c.arc(d.x,d.y,d.r,0,Math.PI * 2,true);
+            c.fillStyle = 'hsl(' + d.hue + ',50% , 50%)';
+            c.fill();
+        }
+    }
+
+    move();
+</script>
+</html>
