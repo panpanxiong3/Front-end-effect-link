@@ -1,0 +1,84 @@
+@charset "utf-8";
+body,ul {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+img {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.wrap {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    width: 400px;
+    height: 492px;
+}
+.imgs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.main {
+    position: relative;
+    overflow: hidden;
+    padding: 4px;
+    width: 390px;
+    height: 390px;
+    border: 1px solid #dadada;
+}
+.smaller {
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 82px;
+    margin-top: 10px;
+}
+.smaller li {
+    position: relative;
+    float: left;
+    padding: 2px;
+    width: 64px;
+    height: 64px;
+    border: 2px solid #000;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+.smaller li:first-child {
+    margin-left: 0;
+}
+.smaller .current {
+    border-color: #ff6a00;
+}
+.biger {
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    left: 410px;
+    width: 400px;
+    height: 400px;
+}
+.mask {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background: url('./images/mask-bg.png') repeat;
+    cursor: crosshair;
+}
+.biger img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+}
