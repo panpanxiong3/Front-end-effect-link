@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a82d154-8da5-40f3-bf18-0c8dabae2b09" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/canvas/Canvas制作粒子效果.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js 拖拽上传图片.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js 日历生成.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js原生倒计时实现.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js 加载进度条实现.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js-拖拽drag-拖放drop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js搜索下方保留搜索记录.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js瀑布流加载技术.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js 加载进度条实现.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/js 加载进度条实现.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js瀑布流加载技术.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/js瀑布流加载技术.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +22,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/canvas/Canvas制作粒子效果.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js瀑布流加载技术.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+            <state relative-caret-position="1806">
+              <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/js原生倒计时实现.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="776">
+              <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -38,9 +45,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>nowYear</find>
+      <find>getThisMonthDay</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,13 +68,19 @@
         <option value="$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html" />
         <option value="$PROJECT_DIR$/js-拖拽drag-拖放drop.html" />
         <option value="$PROJECT_DIR$/canvas/Canvas制作粒子效果.html" />
+        <option value="$PROJECT_DIR$/js/js 拖拽上传图片.html" />
+        <option value="$PROJECT_DIR$/js/js 加载进度条实现.html" />
+        <option value="$PROJECT_DIR$/js/js 日历生成.html" />
+        <option value="$PROJECT_DIR$/js/js瀑布流加载技术.html" />
+        <option value="$PROJECT_DIR$/js/js原生倒计时.js" />
+        <option value="$PROJECT_DIR$/js/js原生倒计时实现.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1908" />
-    <option name="y" value="41" />
-    <option name="width" value="1920" />
+    <option name="x" value="1564" />
+    <option name="y" value="32" />
+    <option name="width" value="1922" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
@@ -78,7 +98,7 @@
             <path>
               <item name="前端效果练习" type="b2602c69:ProjectViewProjectNode" />
               <item name="前端效果练习" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -122,18 +142,23 @@
       <workItem from="1571303587819" duration="599000" />
       <workItem from="1571359584285" duration="750000" />
       <workItem from="1571622397887" duration="5683000" />
-      <workItem from="1571712672295" duration="2540000" />
+      <workItem from="1571712672295" duration="3619000" />
+      <workItem from="1571793823314" duration="3216000" />
+      <workItem from="1571984925309" duration="7768000" />
+      <workItem from="1572050605136" duration="1714000" />
+      <workItem from="1572223597699" duration="660000" />
+      <workItem from="1572232765083" duration="1559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22016000" />
+    <option name="totallyTimeSpent" value="38012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="-1" width="1922" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2630458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -158,41 +183,11 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js搜索下方保留搜索记录.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2058">
-          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js瀑布流加载技术.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="89" selection-start-line="89" selection-end-line="89" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js-拖拽drag-拖放drop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="111" column="31" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js搜索下方保留搜索记录.html" />
+    <entry file="file://$PROJECT_DIR$/js瀑布流加载技术.html" />
+    <entry file="file://$PROJECT_DIR$/js原生实现拖动滑块验证--未封装.html" />
+    <entry file="file://$PROJECT_DIR$/js-拖拽drag-拖放drop.html" />
+    <entry file="file://$PROJECT_DIR$/js原生实现拖动滑动验证-封装.html" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -200,10 +195,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/js 加载进度条实现.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="48" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js 拖拽上传图片.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="881">
+          <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js 日历生成.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5208">
+          <caret line="248" selection-start-line="248" selection-end-line="248" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/canvas/Canvas制作粒子效果.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+        <state relative-caret-position="860">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js原生倒计时.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js瀑布流加载技术.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1806">
+          <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js原生倒计时实现.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
         </state>
       </provider>
     </entry>

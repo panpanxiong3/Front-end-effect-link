@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>【元旦倒计时】2020新年倒计时_距离2020年还有多少天</title>
+
+    <style>
+        .timebox2 {
+            width: 640px;
+            background-color: #FCF3E2;
+            padding: 1rem 0;
+            background-size: 100% 100%;
+        }
+
+        .timebox2 div, timebox2 span, timebox2 div span {
+            color: #333 !important;
+        }
+
+        .timebox2 .timecounter span {
+            color: #333 !important;
+        }
+
+        .timetext {
+            width: 100%;
+            text-align: center;
+        }
+
+        .timetexttitle {
+            font-size: 0.3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .timetextintro {
+            font-size: 0.22rem;
+            margin-bottom: 10px;
+            color: #fff;
+            padding: 0 1.52rem;
+            box-sizing: border-box;
+        }
+
+        .timecounter {
+            font-size: 0.6rem;
+        }
+
+        .txt {
+            padding: 0 0.2rem;
+            box-sizing: border-box;
+        }
+
+        .clearbg5 {
+            display: block;
+            clear: both;
+            width: 100%;
+            height: 0.16rem;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .txt p {
+            line-height: 30px;
+            margin-top: 0.2rem;
+        }
+
+        .txt p img {
+            width: 100%;
+        }
+
+        .timecounter span {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="timebox2">
+    <div class="timetext">
+        <div class="timetexttitle">2020年元旦倒计时</div>
+        <div class="timetextintro">元旦时间：2020年1月1日 农历腊月初七 星期三</div>
+        <div class="timetextintro">目前距离2020年元旦还有</div>
+        <div class="timecounter">
+            <span id="t_d"></span>
+            <span id="t_h"></span>
+            <span id="t_m"></span>
+            <span id="t_s"></span>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function getRTime() {
+        let endTime = new Date('2020/01/01 00:00:00'); //截止时间
+        let nowTime = new Date();
+        let t = endTime.getTime() - nowTime.getTime();
+        let d = Math.floor(t / 1000 / 60 / 60 / 24); //天： 剩余时间 / 1000 / 分 / 秒 / 时
+        let h = Math.floor(t / 1000 / 60 / 60 % 24); //时
+        let m = Math.floor(t / 1000 / 60 % 60); //分
+        let s = Math.floor(t / 1000 % 60); //秒
+
+
+    //    渲染数据
+        document.getElementById('t_d').innerHTML = d + '天';
+        document.getElementById('t_h').innerHTML = h + '时';
+        document.getElementById('t_m').innerHTML = m + '分';
+        document.getElementById('t_s').innerHTML = s + '秒';
+    }
+    console.log(1000 / 60, 1000 % 60,1000000 % 60);
+    setInterval(getRTime,1000);
+</script>
+</html>

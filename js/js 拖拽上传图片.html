@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 拖拽上传图片</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #dropBox {
+        margin: 15px;
+        width: 250px;
+        height: 250px;
+        border: 5px dashed gray;
+        border-radius: 8px;
+        background: lightyellow;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+
+    #dropBox div {
+        margin: 75px 45px;
+        color: orange;
+        font-size: 25px;
+        font-family: Verdana, Arial, sans-serif;
+    }
+
+    input {
+        margin: 15px;
+    }
+</style>
+<body>
+<div id="dropBox">
+    <div>将图片拖放到此处...</div>
+</div>
+<input id="fileInput" type="file" onchange="processFiles(this.files)">
+<img id="thumbnail">
+</body>
+<script>
+    var dropBox;
+
+
+    window.onload = function () {
+        dropBox = document.getElementById('dropBox');
+        dropBox.ondragenter = ignoreDrag;
+        dropBox.ondragover = ignoreDrag;
+        dropBox.ondrop = drop;
+    };
+
+    //阻止默认事件
+    function ignoreDrag(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    //
+    function drop(e) {
+    //    取消事件传播及默认事件
+        e.preventDefault();
+        e.stopPropagation();
+
+    //    取到拖进来的文件
+        let data = e.dataTransfer;
+        let files = data.files;
+    //    将其传给真正的处理文件的函数
+        processFiles(files);
+    }
+
+    function processFiles(files) {
+        var file = files[0];
+        var output = document.getElementById('fileOut');
+    //    创建FileReader
+        var reader = new FileReader();
+    //    创建好数据后之后需要做到事
+        reader.onload = function (e) {
+            dropBox.style.backgroundImage = 'url("' + e.target.result + '")';
+        };
+        reader.readAsDataURL(file);
+    }
+
+</script>
+</html>
