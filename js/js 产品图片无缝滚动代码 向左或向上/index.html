@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js产品无缝滚动向左向上</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a, img {
+        border: 0;
+    }
+
+    body {
+        font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+    }
+
+    /* marqueeleft */
+    .marqueeleft {
+        height: 136px;
+        width: 474px;
+        overflow: hidden;
+        margin: 40px auto;
+    }
+
+    .marqueeleft ul {
+        float: left;
+    }
+
+    .marqueeleft li {
+        float: left;
+        margin: 0 5px;
+        display: inline;
+        width: 148px;
+        height: 133px;
+        overflow: hidden;
+    }
+
+    .marqueeleft li .pic {
+        display: block;
+        border: #ccc 1px solid;
+        width: 135px;
+        height: 104px;
+        padding: 2px;
+        overflow: hidden;
+    }
+
+    .marqueeleft li .txt {
+        text-align: center;
+        height: 23px;
+        line-height: 23px;
+    }
+
+    /* marqueetop */
+    .marqueetop {
+        height: 329px;
+        width: 148px;
+        overflow: hidden;
+        margin: 40px auto;
+    }
+
+    .marqueetop li {
+        padding: 5px 0;
+        width: 148px;
+        height: 133px;
+        overflow: hidden;
+    }
+
+    .marqueetop li .pic {
+        display: block;
+        border: #ccc 1px solid;
+        width: 135px;
+        height: 104px;
+        padding: 2px;
+        overflow: hidden;
+    }
+
+    .marqueetop li .txt {
+        text-align: center;
+        height: 23px;
+        line-height: 23px;
+    }
+</style>
+<body>
+
+<div id="marquee1" class="marqueeleft">
+    <div style="width:8000px;">
+        <ul id="marquee1_1">
+            <li>
+                <a class="pic" href="javascript:;"><img width="135" height="104"
+                                                                   src="./images/201281616534720869.jpg"></a>
+                <div class="txt"><a href="javascript:;">南方国际大厦</a></div>
+            </li>
+            <li>
+                <a class="pic" href="javascript:;"><img width="135" height="104"
+                                                                   src="./images/20127251731536317.jpg"></a>
+                <div class="txt"><a href="javascript:;">南方国际大厦</a></div>
+            </li>
+            <li>
+                <a class="pic" href="javascript:;"><img width="135" height="104"
+                                                                   src="./images/20127251715020800.jpg"></a>
+                <div class="txt"><a href="javascript:;">南方国际大厦</a></div>
+            </li>
+            <li>
+                <a class="pic" href="javascript:;"><img width="135" height="104"
+                                                                   src="./images/20127251705451556.jpg"></a>
+                <div class="txt"><a href="javascript:;">南方国际大厦</a></div>
+            </li>
+        </ul>
+        <ul id="marquee1_2"></ul>
+    </div>
+</div>
+<div id="marquee2" class="marqueetop">
+    <div style="height:8000px;">
+        <ul id="marquee2_1">
+            <li>
+                <a class="pic" href="http://www.17sucai.com/"><img width="135" height="104" src="images/201281616534720869.jpg"></a>
+                <div class="txt"><a href="http://www.17sucai.com/">南方国际大厦</a></div>
+            </li>
+            <li>
+                <a class="pic" href="http://www.17sucai.com/"><img width="135" height="104" src="images/20127251731536317.jpg"></a>
+                <div class="txt"><a href="http://www.17sucai.com/">南方国际大厦</a></div>
+            </li>
+            <li>
+                <a class="pic" href="http://www.17sucai.com/"><img width="135" height="104" src="images/20127251715020800.jpg"></a>
+                <div class="txt"><a href="http://www.17sucai.com/">南方国际大厦</a></div>
+            </li>
+            <li>
+                <a class="pic" href="http://www.17sucai.com/"><img width="135" height="104" src="images/20127251705451556.jpg"></a>
+                <div class="txt"><a href="http://www.17sucai.com/">南方国际大厦</a></div>
+            </li>
+        </ul>
+        <ul id="marquee2_2"></ul>
+    </div>
+</div><!--marqueeleft end-->
+</body>
+<script>
+    function marquee(i,direction) {
+        var obj = document.getElementById("marquee" + i);
+        var obj1 = document.getElementById("marquee" + i + "_1");
+        var obj2 = document.getElementById("marquee" + i + "_2");
+        if(direction == 'up'){
+            if(obj2.offsetTop - obj.scrollTop <= 0){ //设置第二个的起始位置在页面显示位置外
+                obj.scrollTop -= (obj1.offsetHeight + 50);
+            }else {      //设置页面滚动移动
+                var tmp = obj.scrollTop;
+                obj.scrollTop ++;
+                if(obj.scrollTop == tmp ){
+                    obj.scrollTop = -10;
+                }
+            }
+        }else { //设置横向移动
+            if(obj2.offsetWidth - obj.scrollLeft <= 0){ //设置第二块ul起始位置
+                obj.scrollLeft -= obj1.offsetWidth;
+            }else { //移动
+                obj.scrollLeft ++;
+            }
+        }
+    }
+    
+    function marqueeStart(i,direction) {
+        var obj = document.getElementById("marquee" + i);
+        var obj1 = document.getElementById("marquee" + i + "_1");
+        var obj2 = document.getElementById("marquee" + i + "_2");
+        obj2.innerHTML = obj1.innerHTML; //设置第二块的内容相同
+        var marqueeVar = window.setInterval("marquee(" + i + ",'" + direction +"')",20); //循环播放
+        obj.onmouseover = function(){
+            window.clearInterval(marqueeVar);
+        };
+        obj.onmouseout = function(){
+            marqueeVar = window.setInterval("marquee("+ i +", '"+ direction +"')", 20);
+        }
+    }
+
+    marqueeStart(1,"left");
+    marqueeStart(2,"up");
+</script>
+</html>
