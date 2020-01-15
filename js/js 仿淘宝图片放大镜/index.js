@@ -46,15 +46,15 @@ window.onload = function () {
   main.onmouseenter = function () {
       mask.style.display = 'block';
       biger.style.display = 'block';
-  }
+  };
     main.onmouseleave=function(){
         mask.style.display='none';
         biger.style.display='none';
-    }
+    };
   main.onmousemove = function (e) {
       var e = e || window.event;
-      var pagex = e.pageX || scroll().left + e.clientX;
-      var pagey = e.pageY || scroll().top + e.clientY;
+      var pagex = e.pageX || scroll().left + e.clientX; //显示范围 x轴
+      var pagey = e.pageY || scroll().top + e.clientY; //显示范围 y轴
       pagex = pagex - wrap.offsetLeft - mask.offsetWidth / 2;
       pagey = pagey - wrap.offsetTop - mask.offsetHeight / 2 ;
       if(pagex<0){
