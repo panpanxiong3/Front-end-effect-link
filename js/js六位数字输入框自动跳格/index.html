@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	
+    <script src="js/BrowserUtil.js"></script>
+    <script src="js/verifyCode.js"></script>
+	
+    <meta name="viewport"  content="width=device-width">
+	
+    <link href="css/verifyCode.css" rel="stylesheet">
+	
+    <title>js六位数字框自动跳格</title>
+	
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        #codeDiv{
+            margin: 0 auto;
+            margin-top: 20%;
+        }
+    </style>
+	
+</head>
+<body>
+
+<div id="codeDiv" align="center"></div>
+
+<script>
+verifyCodeDOMUtil.buildCodeModule("codeDiv", "code")
+verifyCode.init("code")
+
+let object = {
+	alert : function (value) {
+		alert(value)
+	}
+}
+
+verifyCode.that = object
+verifyCode.onFinish = function (value,that) {
+	that.alert(value)
+}
+
+</script>
+
+
+</body>
+</html>
