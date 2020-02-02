@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a82d154-8da5-40f3-bf18-0c8dabae2b09" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js 仿淘宝图片放大镜/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js 仿淘宝图片放大镜/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="2a82d154-8da5-40f3-bf18-0c8dabae2b09" name="默认更改列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +104,7 @@
       <workItem from="1572488777362" duration="5885000" />
       <workItem from="1572495575420" duration="627000" />
       <workItem from="1575969356102" duration="1487000" />
+      <workItem from="1580634271295" duration="16000" />
     </task>
     <servers />
   </component>
