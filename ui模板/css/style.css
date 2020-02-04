@@ -1,0 +1,32 @@
+body { background-color: #f7f7f7;}
+body {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.dwo-mt10 { margin-top: 10px;}
+.content { padding: 8px;}
+.grids { border-radius: 10px; background-color: #fff; overflow: hidden;}
+.has-more { border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
+.has-more.show-more .weui-grid-more { display: block;}
+
+.weui-grids { margin-bottom: -1px;}
+.weui-grids:before { border-top: 0;}
+.weui-grids:after { border-left: 0;}
+.weui-grid:nth-child(3n):before { border-right: 0;}
+.weui-grid-more { display: none;}
+.grids-more { position: relative; height: 50px; line-height: 50px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center; font-size: 14px; color: #5b6a91; background-color: #fff;}
+.grids-more:before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; border-top: 1px solid #d9d9d9; transform: scaleY(.5); transform-origin: 0 100%;}
+.grids-more span { display: inline-block; vertical-align: middle;}
+.grids-more span:after { content: ""; display: inline-block; width: 16px; height: 16px; margin-left: 5px; background: url(../images/arrow.png) no-repeat 0 / 16px 16px; vertical-align: text-top;}
+.grids-more .show:after { transform: rotate(180deg);}
+
+.grids-title { box-sizing: border-box; position: relative; height: 50px; padding: 0 15px; line-height: 50px;}
+.grids-title:after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; border-top: 1px solid #d9d9d9; transform: scaleY(.5); transform-origin: 0 100%;}
+.grids-title h2 { font-size: 16px; font-weight: 400; color: #706f75;}
+
+.pay { display: flex; justify-content: space-between; height: 150px; border-radius: 10px; background-color: #3db271; overflow: hidden;}
+.pay-qrcode, .pay-wallet { flex: 1; padding-top: 30px; text-align: center; color: #fefefe;}
+.pay-qrcode p, .pay-wallet p { height: 50px; margin-top: 10px;}
+.pay-qrcode i { display: inline-block; width: 32px; height: 32px; background: url(../images/qrcode.png) 50%  no-repeat; background-size: contain;}
+.pay-wallet i { display: inline-block; width: 32px; height: 32px; background: url(../images/wallet.png) 50% no-repeat; background-size: contain;}
+.pay-wallet span { display: block; opacity: .5;}

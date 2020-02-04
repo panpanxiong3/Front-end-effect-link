@@ -52,7 +52,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Vue-Eboook" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -105,6 +105,7 @@
       <workItem from="1572495575420" duration="627000" />
       <workItem from="1575969356102" duration="1487000" />
       <workItem from="1580634271295" duration="16000" />
+      <workItem from="1580716033866" duration="150000" />
     </task>
     <servers />
   </component>
@@ -112,9 +113,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1575969363594">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1580716183999">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1575969363594" />
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1580716183999" />
   </component>
 </project>
