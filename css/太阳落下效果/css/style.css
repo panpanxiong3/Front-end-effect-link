@@ -1,0 +1,14 @@
+body {
+  background-color: #000;    
+  margin: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0px;
+  
+}
+canvas {
+  transform:scale(1.5);
+}
