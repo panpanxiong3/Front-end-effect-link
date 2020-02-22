@@ -1,0 +1,56 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.poster-main {
+    width: 800px;
+    height: 270px;
+    position: relative;
+}
+
+.poster-main .poster-btn {
+    width: 100px;
+    height: 270px;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    font-size: 64px;
+    color: seashell;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .6;
+}
+
+.poster-main .poster-btn:hover {
+    cursor: pointer;
+}
+
+.poster-main .poster-prev-btn {
+    left: 0;
+}
+
+.poster-main .poster-next-btn {
+    right: 0;
+}
+
+.poster-main .poster-list {
+    width: 800px;
+    height: 270px;
+}
+
+.poster-main .poster-list li {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.poster-main a,
+.poster-main img {
+    display: block;
+}
